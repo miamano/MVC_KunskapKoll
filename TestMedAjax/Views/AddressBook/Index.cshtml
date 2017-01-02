@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TestMedAjax.Models.AddressBook>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*
+        @Html.ActionLink("Create new item", "CreateNewItem")
+    *@
+    <input type="button" id="createItem" name="createNewItem" value="Create new item" class="btn btn-default" />
+</p>
+<div id="displayNewItem"></div>
+
+<div id="displayList"></div>
+
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $("#displayList").load("/AddressBook/List"); //AJAX: GET
+            $("#createItem").click(function () {
+                var displayNewItem = $("#displayNewItem");
+                displayNewItem.load("/AddressBook/CreateNewItem"); //AJAX: GET
+                displayNewItem.show();
+            });
+           
+        });
+    </script>
+}

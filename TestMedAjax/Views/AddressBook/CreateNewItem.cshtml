@@ -1,0 +1,74 @@
+﻿@model TestMedAjax.Models.AddressBook
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Create new item - AdressBook</h4>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tnr, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tnr, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tnr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <!--<input type="submit" value="Create" class="btn btn-default" />-->
+                <input type="button" id="buttonAddItem" name="buttonAddItem" value="Add new item" class="btn btn-default" />
+                <input type="button" id="buttonCancel" name="buttonCancel" value="Cancel" class="btn btn-default" />
+            </div>
+        </div>
+
+        <script>
+            var displayNewItem = $("#displayNewItem");
+            $("#buttonAddItem").click(function (e) {
+                var name = $("input[name=Name]").val();
+                var tnr = $("input[name=Tnr]").val();
+                var address = $("input[name=Address]").val();
+                if (name == "" || tnr == "") {
+                    alert("Either name or telephone number is empty.");
+                    return;
+                }
+                $(e.target).attr('disabled', 'disabled');
+                var data = { name: name, tnr: tnr, address: address };
+                //AJAX: POST
+                $.post("/AddressBook/AjaxCreateNewItem", data).fail(function () {
+                    alert("Fail to add new item.");
+                }).done(function (data) {
+                    var id = data;
+                    $("#displayList").html(data);
+                    displayNewItem.hide();
+                });
+            });
+            $("#buttonCancel").click(function (e) {
+                displayNewItem.hide();
+            });
+        </script>
+    </div>
+}
+
+@*
+    <div>
+       @Html.ActionLink("Back to List", "Index")
+    </div>
+*@
+

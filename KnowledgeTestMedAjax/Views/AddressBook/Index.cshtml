@@ -1,0 +1,25 @@
+﻿@model IEnumerable<KnowledgeTestMedAjax.Models.AddressBook>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+
+    @Ajax.ActionLink("Create new item", "CreateNewItem",
+    new AjaxOptions
+    {
+        UpdateTargetId = "displayList",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    })
+</p>
+<div id="displayItem"></div>
+@*@Html.ActionLink("Create New", "CreateNewItem")*@
+<div id="displayList">@Html.Partial("List")</div>
+
+
+

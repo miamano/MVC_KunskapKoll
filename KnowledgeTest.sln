@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnowledgeTest", "KnowledgeTest\KnowledgeTest.csproj", "{7EEF08D2-AB94-4163-99AA-0E3E439BB846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnowledgeTestMedAjax", "KnowledgeTestMedAjax\KnowledgeTestMedAjax.csproj", "{3C83C33D-E24B-4B74-BE68-21667557847D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMedAjax", "TestMedAjax\TestMedAjax.csproj", "{3E15D6CE-929B-4A38-A2FF-6A938D944D85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EEF08D2-AB94-4163-99AA-0E3E439BB846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EEF08D2-AB94-4163-99AA-0E3E439BB846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EEF08D2-AB94-4163-99AA-0E3E439BB846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EEF08D2-AB94-4163-99AA-0E3E439BB846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C83C33D-E24B-4B74-BE68-21667557847D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C83C33D-E24B-4B74-BE68-21667557847D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C83C33D-E24B-4B74-BE68-21667557847D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C83C33D-E24B-4B74-BE68-21667557847D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E15D6CE-929B-4A38-A2FF-6A938D944D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E15D6CE-929B-4A38-A2FF-6A938D944D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E15D6CE-929B-4A38-A2FF-6A938D944D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E15D6CE-929B-4A38-A2FF-6A938D944D85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
